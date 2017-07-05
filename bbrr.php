@@ -1,21 +1,9 @@
 <?php
 
 /**
- * The plugin bootstrap file
- *
- * This file is read by WordPress to generate the plugin information in the plugin
- * admin area. This file also includes all of the dependencies used by the plugin,
- * registers the activation and deactivation functions, and defines a function
- * that starts the plugin.
- *
- * @link              https://casabona.org
- * @since             1.0.0
- * @package           Bbrr
- *
- * @wordpress-plugin
  * Plugin Name:       BB Random Rows
  * Plugin URI:        https://github.com/jcasabona/bb-random-rows
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       A small plugin that adds some JS to A/B test or randomize Beaver Builder rows
  * Version:           1.0.0
  * Author:            Joe Casabona
  * Author URI:        https://casabona.org
@@ -27,6 +15,11 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+
+// If Beaver Builder isn't installed, abort
+if ( ! is_plugin_active('bb-plugin/fl-builder.php') ) {
 	die;
 }
 
